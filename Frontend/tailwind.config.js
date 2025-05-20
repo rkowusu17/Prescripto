@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         primary: "#5f6fff",
-        headCol: "linear-gradient(#5f6fff , #c3c8f040 )",
+        deep: "#3040f0",
       },
       gridTemplateColumns: {
         auto: "repeat(auto-fill, minmax(200px, 1fr))",

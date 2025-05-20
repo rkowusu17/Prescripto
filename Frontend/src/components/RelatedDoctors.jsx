@@ -1,21 +1,30 @@
-import React, { useContext } from "react";
-// import { doctors } from "../assets/assets_frontend/assets";
+import React, { use, useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 
-const TopDoctors = () => {
-  const navigate = useNavigate();
+const RelatedDoctors = ({ speciality, docId }) => {
   const { doctors } = useContext(AppContext);
+  const navigate = useNavigate();
+  const [relatedDoc, setRelatedDocs] = useState([]);
+
+  useEffect(() => {
+    if (doctors.length > 0 && speciality) {
+      const doctorsData = doctors.filter(
+        (doc) => doc.speciality === speciality && doc._id !== docId
+      );
+      setRelatedDocs(doctorsData);
+    }
+  }, [doctors, speciality, docId]);
   return (
     <div className="flex flex-col items-center gap-4 my-16 text-gray-900 md:mx-10">
-      <h1 className="text-3xl font-medium text-center">Top Doctors to Book</h1>
+      <h1 className="text-3xl font-medium text-center">Related Doctors</h1>
       <p className="text-center text-sm mx-auto">
         Simply browse through our extensive list of trusted doctors.
       </p>
 
       {/* Add your doctor cards here */}
       <div className="w-full grid grid-cols-auto gap-4 pt-5 gap-y-6 px-3 sm:px-0 ">
-        {doctors.slice(0, 10).map((doctor, index) => (
+        {relatedDoc.slice(0, 5).map((doctor, index) => (
           <div
             onClick={() => {
               navigate(`/appointment/${doctor._id}`);
@@ -49,4 +58,4 @@ const TopDoctors = () => {
   );
 };
 
-export default TopDoctors;
+export default RelatedDoctors;
