@@ -11,12 +11,12 @@ const Navbar = () => {
           "fixed",
           "right-[10%]",
           "left-[10%]",
-          "bg-gray-200/85",
+          "bg-gray-300/65",
           "z-20",
           "p-8"
         );
       } else {
-        navbar.classList.remove("bg-gray-200/85", "z-20", "fixed", "p-8");
+        navbar.classList.remove("bg-gray-300/65", "z-20", "fixed", "p-8");
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -45,20 +45,20 @@ const Navbar = () => {
       </a>
       <ul className="hidden md:flex items-start gap-5 font-medium">
         <NavLink to={"/"}>
-          <li className="py-1 uppercase ">Home</li>
+          <li className="py-1 uppercase hover:opacity-50">Home</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden " />
         </NavLink>
 
         <NavLink to={"/doctors"}>
-          <li className="py-1 uppercase ">All Doctors</li>
+          <li className="py-1 uppercase hover:opacity-50 ">All Doctors</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden " />
         </NavLink>
         <NavLink to={"/about"}>
-          <li className="py-1 uppercase ">About</li>
+          <li className="py-1 uppercase hover:opacity-50 ">About</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden " />
         </NavLink>
         <NavLink to={"/contact"}>
-          <li className="py-1 uppercase ">Contact</li>
+          <li className="py-1 uppercase hover:opacity-50 ">Contact</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden " />
         </NavLink>
       </ul>
