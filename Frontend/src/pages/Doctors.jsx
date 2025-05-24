@@ -7,6 +7,7 @@ const Doctors = () => {
   const { speciality } = useParams();
   const { doctors } = useContext(AppContext);
   const [filterDoc, setFilterDoc] = useState([]);
+  const [showFilter, setShowFilter] = useState(false);
   const navigate = useNavigate();
 
   const applyFilter = (speciality) => {
@@ -23,9 +24,24 @@ const Doctors = () => {
   }, [doctors, speciality]);
   return (
     <div>
+      <p className="uppercase text-3xl font-medium text-center mt-10  text-gray-500 mb-10">
+        All <span className="text-gray-700 font-medium">Doctors</span>
+      </p>
       <p className="text-gray-600">Browse through our doctor specialist.</p>
       <div className="flex flex-col sm:flex-row items-start gap-10 mt-8">
-        <div className="flex flex-col gap-4 text-sm text-gray-600">
+        <button
+          className={`py-1 px-3 border rounded text-sm transition-all sm:hidden ${
+            showFilter ? "bg-primary text-white" : ""
+          }`}
+          onClick={() => setShowFilter((prev) => !prev)}
+        >
+          Filters
+        </button>
+        <div
+          className={` flex-col gap-4 text-sm text-gray-600 ${
+            showFilter ? "flex" : "hidden sm:flex"
+          }`}
+        >
           <p
             onClick={() =>
               // The use of reverse logic to set the navigate path

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const SpecialityMenu = () => {
   return (
     <div
-      className="flex flex-col items-center gap-4 p-16 text-gray-800 scroll-mt-24"
+      className="flex flex-col mt-4 items-center gap-4 lg:p-16 text-gray-800 scroll-mt-24"
       id="speciality"
     >
       <h1 className="text-3xl font-medium">Find by Speciality </h1>
@@ -14,7 +14,7 @@ const SpecialityMenu = () => {
         your appointment hustle-free
       </p>
 
-      <div className="flex sm:justify-center gap-4 pt-5 w-full overflow-scroll">
+      <div className="flex md:justify-center gap-4 pt-5 w-full overflow-scroll">
         {specialityData.map((item, index) => (
           <Link
             onClick={() => scrollTo(0, 0)}

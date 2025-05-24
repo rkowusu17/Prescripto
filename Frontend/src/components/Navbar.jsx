@@ -9,8 +9,8 @@ const Navbar = () => {
       if (window.scrollY > 80) {
         navbar.classList.add(
           "fixed",
-          "right-[10%]",
-          "left-[10%]",
+          "right-[5%]",
+          "left-[5%]",
           "bg-gray-300/65",
           "z-20",
           "p-8"
@@ -44,20 +44,20 @@ const Navbar = () => {
         />
       </a>
       <ul className="hidden md:flex items-start gap-5 font-medium">
-        <NavLink to={"/"}>
+        <NavLink to={"/"} className={scrollTo(0, 0)}>
           <li className="py-1 uppercase hover:opacity-50">Home</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden " />
         </NavLink>
 
-        <NavLink to={"/doctors"}>
+        <NavLink to={"/doctors"} className={scrollTo(0, 0)}>
           <li className="py-1 uppercase hover:opacity-50 ">All Doctors</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden " />
         </NavLink>
-        <NavLink to={"/about"}>
+        <NavLink to={"/about"} className={scrollTo(0, 0)}>
           <li className="py-1 uppercase hover:opacity-50 ">About</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden " />
         </NavLink>
-        <NavLink to={"/contact"}>
+        <NavLink to={"/contact"} className={scrollTo(0, 0)}>
           <li className="py-1 uppercase hover:opacity-50 ">Contact</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden " />
         </NavLink>
@@ -107,6 +107,43 @@ const Navbar = () => {
             Create account
           </button>
         )}
+        <img
+          onClick={() => setShowMenu(true)}
+          src={assets.menu_icon}
+          alt="menu-icon"
+          className="w-6 md:hidden"
+        />
+        {/* Mobile Menu */}
+        <div
+          className={` ${
+            showMenu ? "fixed w-full" : "h-0 w-0"
+          } md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all ease-in-out duration-300`}
+        >
+          <div className="flex items-center justify-between p-8">
+            <img className="w-36" src={assets.logo} alt="" />
+
+            <img
+              className="w-8"
+              src={assets.cross_icon}
+              alt="cancel"
+              onClick={() => setShowMenu(false)}
+            />
+          </div>
+          <ul className="flex flex-col justify-center items-center gap-2 mt-5 text-lg font-medium">
+            <NavLink to={"/"} onClick={() => setShowMenu(false)}>
+              <p className="px-4 py-2 rounded inline-block">Home</p>
+            </NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to={"/doctors"}>
+              <p className="px-4 py-2 rounded inline-block">All doctors</p>
+            </NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to={"/about"}>
+              <p className="px-4 py-2 rounded inline-block">About</p>
+            </NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to={"/contact"}>
+              <p className="px-4 py-2 rounded inline-block">Contact</p>
+            </NavLink>
+          </ul>
+        </div>
       </div>
     </div>
   );

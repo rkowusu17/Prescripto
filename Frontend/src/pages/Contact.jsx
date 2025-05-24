@@ -12,10 +12,10 @@ const Contact = () => {
           <img
             src={assets.contact_image}
             alt="contact-img"
-            className="w-full md:max-w-[20rem]"
+            className="w-full md:max-w-[20rem] rounded-lg"
           />
           <div className="flex flex-col gap-4 justify-center md:w-2/4 text-sm text-gray-500 text-left">
-            <p className="uppercase text-xl font-medium text-gray-700">
+            <p className="uppercase text-lg font-semibold text-gray-700">
               Our Office
             </p>
             <p>
@@ -28,11 +28,11 @@ const Contact = () => {
               <span className="font-medium text-primary"> Email: </span>{" "}
               prescripto@hotmail.com
             </p>
-            <p className="uppercase text-xl font-medium text-gray-700">
+            <p className="uppercase text-xl font-semibold text-gray-700">
               Careers at Prescripto
             </p>
             <p> Learn more about our teams and job openings. </p>
-            <button className="w-[10rem] border px-6 py-2 border-gray-600 rounded hover:bg-primary hover:text-white hover:border-none transition-all duration-300 cursor-pointer text-gray-600">
+            <button className="w-[10rem] border px-6 py-4 border-gray-600 rounded hover:bg-primary hover:text-white hover:border-none transition-all duration-500 cursor-pointer text-gray-600">
               Explore jobs
             </button>
           </div>
