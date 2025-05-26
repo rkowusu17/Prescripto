@@ -43,13 +43,14 @@ const Doctors = () => {
           }`}
         >
           <p
-            onClick={() =>
+            onClick={() => {
+              setShowFilter(!showFilter);
               // The use of reverse logic to set the navigate path
 
               speciality === "General physician"
                 ? navigate("/doctors")
-                : navigate("/doctors/General physician")
-            }
+                : navigate("/doctors/General physician");
+            }}
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === "General physician"
                 ? "bg-indigo-100 text-black"
@@ -59,13 +60,14 @@ const Doctors = () => {
             General physician
           </p>
           <p
-            onClick={() =>
+            onClick={() => {
+              setShowFilter(!showFilter);
               // The use of reverse logic to set the navigate path
 
               speciality === "Gynecologist"
                 ? navigate("/doctors")
-                : navigate("/doctors/Gynecologist")
-            }
+                : navigate("/doctors/Gynecologist");
+            }}
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === "Gynecologist" ? "bg-indigo-100 text-black" : " "
             }`}
@@ -73,13 +75,14 @@ const Doctors = () => {
             Gynecologist
           </p>
           <p
-            onClick={() =>
+            onClick={() => {
+              setShowFilter(!showFilter);
               // The use of reverse logic to set the navigate path
 
               speciality === "Dermatologist"
                 ? navigate("/doctors")
-                : navigate("/doctors/Dermatologist")
-            }
+                : navigate("/doctors/Dermatologist");
+            }}
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === "Dermatologist" ? "bg-indigo-100 text-black" : " "
             }`}
@@ -87,13 +90,14 @@ const Doctors = () => {
             Dermatologist
           </p>
           <p
-            onClick={() =>
+            onClick={() => {
+              setShowFilter(!showFilter);
               // The use of reverse logic to set the navigate path
 
               speciality === "Pediatricians"
                 ? navigate("/doctors")
-                : navigate("/doctors/Pediatricians")
-            }
+                : navigate("/doctors/Pediatricians");
+            }}
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === "Pediatricians" ? "bg-indigo-100 text-black" : " "
             }`}
@@ -101,12 +105,13 @@ const Doctors = () => {
             Pediatricians
           </p>
           <p
-            onClick={() =>
+            onClick={() => {
+              setShowFilter(!showFilter);
               // The use of reverse logic to set the navigate path
               speciality === "Neurologist"
                 ? navigate("/doctors")
-                : navigate("/doctors/Neurologist")
-            }
+                : navigate("/doctors/Neurologist");
+            }}
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === "Neurologist" ? "bg-indigo-100 text-black" : " "
             }`}
@@ -114,11 +119,12 @@ const Doctors = () => {
             Neurologist
           </p>
           <p
-            onClick={() =>
+            onClick={() => {
+              setShowFilter(!showFilter);
               speciality === "Gastroenterologist"
                 ? navigate("/doctors")
-                : navigate("/doctors/Gastroenterologist")
-            }
+                : navigate("/doctors/Gastroenterologist");
+            }}
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === "Gastroenterologist"
                 ? "bg-indigo-100 text-black"
